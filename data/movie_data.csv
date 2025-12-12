@@ -1,0 +1,60 @@
+Name,Year,Genre,Rating,BoxOffice,Budget,Director,Country,Runtime,IMDB_Score
+The Dark Knight,2008,Action,PG-13,1005.0,185,Christopher Nolan,USA,152,9.0
+Inception,2010,Sci-Fi,PG-13,836.8,160,Christopher Nolan,USA,148,8.8
+Interstellar,2014,Sci-Fi,PG-13,677.5,165,Christopher Nolan,USA,169,8.6
+The Matrix,1999,Sci-Fi,R,467.2,63,The Wachowskis,USA,136,8.7
+Pulp Fiction,1994,Crime,R,214.2,8,Quentin Tarantino,USA,154,8.9
+Forrest Gump,1994,Drama,PG-13,677.9,55,Robert Zemeckis,USA,142,8.8
+The Shawshank Redemption,1994,Drama,R,58.4,25,Frank Darabont,USA,142,9.3
+Titanic,1997,Drama,PG-13,2201.6,200,James Cameron,USA,194,7.8
+Avatar,2009,Sci-Fi,PG-13,2787.9,237,James Cameron,USA,162,7.8
+Jurassic Park,1993,Adventure,PG-13,1030.0,63,Steven Spielberg,USA,127,8.1
+E.T.,1982,Sci-Fi,PG,792.9,10.5,Steven Spielberg,USA,115,7.8
+Jaws,1975,Thriller,PG,470.7,9,Steven Spielberg,USA,124,8.0
+Star Wars,1977,Sci-Fi,PG,775.4,11,George Lucas,USA,121,8.6
+The Godfather,1972,Crime,R,287.0,6,Francis Ford Coppola,USA,175,9.2
+Casablanca,1942,Drama,PG,1.0,1.0,Michael Curtiz,USA,102,8.5
+The Avengers,2012,Action,PG-13,1518.8,220,Joss Whedon,USA,143,8.0
+Black Panther,2018,Action,PG-13,1347.0,200,Ryan Coogler,USA,134,7.3
+Wonder Woman,2017,Action,PG-13,821.8,149,Patty Jenkins,USA,141,7.4
+Mad Max: Fury Road,2015,Action,R,378.4,150,George Miller,Australia,120,8.1
+The Lion King,1994,Animation,G,968.5,45,Roger Allers,USA,88,8.5
+Toy Story,1995,Animation,G,373.6,30,John Lasseter,USA,81,8.3
+Finding Nemo,2003,Animation,G,940.3,94,Andrew Stanton,USA,100,8.2
+Up,2009,Animation,PG,735.1,175,Pete Docter,USA,96,8.2
+The Incredibles,2004,Animation,PG,631.4,92,Brad Bird,USA,115,8.0
+Frozen,2013,Animation,PG,1280.0,150,Chris Buck,USA,102,7.4
+The Hangover,2009,Comedy,R,467.5,35,Todd Phillips,USA,100,7.7
+Bridesmaids,2011,Comedy,R,288.4,32.5,Paul Feig,USA,125,6.8
+Superbad,2007,Comedy,R,169.9,20,Greg Mottola,USA,113,7.6
+The Exorcist,1973,Horror,R,441.3,12,William Friedkin,USA,122,8.0
+Get Out,2017,Horror,R,255.4,4.5,Jordan Peele,USA,104,7.7
+The Conjuring,2013,Horror,R,319.5,20,James Wan,USA,112,7.5
+A Quiet Place,2018,Horror,PG-13,340.9,17,John Krasinski,USA,90,7.5
+The Sixth Sense,1999,Horror,PG-13,672.8,40,M. Night Shyamalan,USA,107,8.1
+Gladiator,2000,Action,R,503.2,103,Ridley Scott,USA,155,8.5
+Saving Private Ryan,1998,War,R,481.8,70,Steven Spielberg,USA,169,8.6
+Schindler's List,1993,War,R,321.2,22,Steven Spielberg,USA,195,8.9
+Apocalypse Now,1979,War,R,150.0,31,Francis Ford Coppola,USA,147,8.4
+The Lord of the Rings: Fellowship,2001,Fantasy,PG-13,871.5,93,Peter Jackson,New Zealand,178,8.8
+Harry Potter and the Sorcerer's Stone,2001,Fantasy,PG,974.8,125,Chris Columbus,UK,152,7.6
+The Wizard of Oz,1939,Fantasy,G,3.0,2.8,Victor Fleming,USA,102,8.0
+The Social Network,2010,Drama,PG-13,224.9,40,David Fincher,USA,120,7.7
+Goodfellas,1990,Crime,R,46.8,25,Martin Scorsese,USA,146,8.7
+The Departed,2006,Crime,R,291.5,90,Martin Scorsese,USA,151,8.5
+Fight Club,1999,Crime,R,100.9,63,David Fincher,USA,139,8.8
+Guardians of the Galaxy,2014,Action,PG-13,773.3,170,James Gunn,USA,121,8.0
+Iron Man,2008,Action,PG-13,585.2,140,Jon Favreau,USA,126,7.9
+Spider-Man,2002,Action,PG-13,821.7,139,Sam Raimi,USA,121,7.4
+The Dark Knight Rises,2012,Action,PG-13,1084.9,250,Christopher Nolan,USA,164,8.4
+Batman Begins,2005,Action,PG-13,374.2,150,Christopher Nolan,USA,140,8.2
+Dunkirk,2017,War,PG-13,526.0,100,Christopher Nolan,UK,106,7.8
+Gravity,2013,Sci-Fi,PG-13,723.2,100,Alfonso Cuaron,USA,91,7.7
+Blade Runner 2049,2017,Sci-Fi,R,259.2,150,Denis Villeneuve,USA,164,8.0
+Arrival,2016,Sci-Fi,PG-13,203.4,47,Denis Villeneuve,USA,116,7.9
+The Martian,2015,Sci-Fi,PG-13,630.2,108,Ridley Scott,USA,144,8.0
+La La Land,2016,Musical,PG-13,446.1,30,Damien Chazelle,USA,128,8.0
+The Greatest Showman,2017,Musical,PG,434.9,84,Michael Gracey,USA,105,7.6
+Mamma Mia!,2008,Musical,PG-13,609.8,52,Phyllida Lloyd,UK,108,6.4
+Chicago,2002,Musical,PG-13,306.8,45,Rob Marshall,USA,113,7.1
+The Sound of Music,1965,Musical,G,286.2,8.2,Robert Wise,USA,174,8.0

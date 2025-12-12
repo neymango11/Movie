@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Data Visualization - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2563eb;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2563eb;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        h3 {
+            color: #1e40af;
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .sketch-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #2563eb;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        .screenshot-placeholder {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 60px;
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        .screenshot-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+
+        .link-button:hover {
+            background: #1e40af;
+        }
+
+        .metadata {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .metadata p {
+            margin: 5px 0;
+        }
+
+        .metadata strong {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Data Visualization - Project Documentation</h1>
+        
+        <div class="metadata">
+            <p><strong>Project:</strong> Interactive D3.js Visualization</p>
+            <p><strong>Dataset:</strong> Movie Data (60 movies with 10 attributes)</p>
+            <p><strong>Tools Used:</strong> D3.js v7, HTML, CSS, JavaScript</p>
+            <p><strong>Author:</strong>Aman Mohamed</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="link-button">View Live Visualization →</a>
+        </div>
+
+        <div class="section">
+            <h2>1. Design Process</h2>
+            
+            <h3>1.1 Initial Questions</h3>
+            <p>Before starting the visualization, I asked myself several questions about the movie dataset:</p>
+            <ul>
+                <li>Which genres generate the most box office revenue?</li>
+                <li>How has the number of movies changed over time?</li>
+                <li>Is there a relationship between IMDB scores and box office performance?</li>
+                <li>What are the top-grossing movies in the dataset?</li>
+                <li>How do different ratings (G, PG, PG-13, R) compare in terms of box office?</li>
+            </ul>
+
+            <h3>1.2 Initial Sketches and Design Ideas</h3>
+            <p>I started by sketching out different visualization ideas on paper. Here's what I considered:</p>
+            
+            <h4>Initial Design Concepts:</h4>
+            <ol>
+                <li><strong>Bar Chart for Genres:</strong> I wanted to show total box office by genre using vertical bars. This makes it easy to compare different genres at a glance.</li>
+                <li><strong>Line Chart for Timeline:</strong> A line chart showing the number of movies released each year would help identify trends over time.</li>
+                <li><strong>Scatter Plot:</strong> To explore the relationship between IMDB scores and box office, a scatter plot seemed ideal. Each point represents a movie.</li>
+                <li><strong>Top Movies Chart:</strong> A horizontal bar chart would clearly show the top 10 movies by box office, with movie names readable on the y-axis.</li>
+            </ol>
+
+            <h3>1.3 Iterative Design Process</h3>
+            <p>During development, I made several iterations:</p>
+            <ul>
+                <li><strong>First iteration:</strong> Basic charts without interactivity - just static visualizations</li>
+                <li><strong>Second iteration:</strong> Added hover tooltips to show detailed information</li>
+                <li><strong>Third iteration:</strong> Added click interactions to display movie details in an info panel</li>
+                <li><strong>Fourth iteration:</strong> Added filter controls (genre, rating, year) to allow users to explore subsets of data</li>
+                <li><strong>Final iteration:</strong> Improved styling, added responsive design, and polished the user experience</li>
+            </ul>
+
+            <h3>1.4 Challenges and Solutions</h3>
+            <p>Some challenges I encountered:</p>
+            <ul>
+                <li><strong>Data parsing:</strong> Initially had issues with CSV parsing. Solved by using D3's built-in CSV parser and proper data type conversion.</li>
+                <li><strong>Scales and domains:</strong> Learning to set up proper scales for different data types (categorical vs. numerical) required practice.</li>
+                <li><strong>Interactivity:</strong> Implementing tooltips and click events took time to get right, especially positioning tooltips correctly.</li>
+                <li><strong>Filtering:</strong> Making filters work together and update all charts simultaneously required careful state management.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Rationale of Design Choices</h2>
+
+            <h3>2.1 Chart Type Selection</h3>
+            
+            <h4>Bar Chart for Genres</h4>
+            <p><strong>Why:</strong> Bar charts are excellent for comparing categorical data. Since genres are discrete categories, a bar chart allows easy comparison of box office totals across different genres. I chose vertical bars because genre names are relatively short and fit well on the x-axis.</p>
+            <p><strong>Encoding:</strong> Genre (categorical) → x-axis position, Box Office (quantitative) → bar height (y-axis)</p>
+
+            <h4>Line Chart for Timeline</h4>
+            <p><strong>Why:</strong> Line charts are ideal for showing trends over time. The continuous nature of time makes a line chart more appropriate than bars, as it emphasizes the flow and trends in movie releases over the years.</p>
+            <p><strong>Encoding:</strong> Year (temporal) → x-axis position, Count (quantitative) → y-axis position</p>
+
+            <h4>Scatter Plot for IMDB Score vs Box Office</h4>
+            <p><strong>Why:</strong> Scatter plots are perfect for exploring relationships between two quantitative variables. This allows users to see if there's a correlation between critical acclaim (IMDB score) and commercial success (box office).</p>
+            <p><strong>Encoding:</strong> IMDB Score (quantitative) → x-axis position, Box Office (quantitative) → y-axis position</p>
+
+            <h4>Horizontal Bar Chart for Top Movies</h4>
+            <p><strong>Why:</strong> Horizontal bars work well when you have long text labels (movie names). This orientation makes movie names readable without rotation, and the horizontal layout naturally suggests ranking from top to bottom.</p>
+            <p><strong>Encoding:</strong> Movie Name (categorical) → y-axis position, Box Office (quantitative) → bar length (x-axis)</p>
+
+            <h3>2.2 Color Choices</h3>
+            <p><strong>Primary Color (#2563eb):</strong> I chose a vibrant blue color as the primary color for all charts. This color:</p>
+            <ul>
+                <li>Is visually appealing and modern</li>
+                <li>Has good contrast against white backgrounds</li>
+                <li>Is accessible (not problematic for colorblind users in this context)</li>
+                <li>Creates visual consistency across all visualizations</li>
+            </ul>
+            <p><strong>Hover Color (#1e40af):</strong> A darker blue for hover states provides clear visual feedback when users interact with elements.</p>
+            <p><strong>Why not use different colors for different categories?</strong> Since each chart focuses on a single dimension, using a single color scheme keeps the visualization clean and avoids unnecessary complexity. Color is reserved for highlighting and interaction feedback.</p>
+
+            <h3>2.3 Layout and Arrangement</h3>
+            <p><strong>Grid Layout:</strong> I arranged charts in a responsive grid (2x2 on larger screens, 1 column on mobile). This allows users to see multiple visualizations simultaneously, facilitating comparison and exploration.</p>
+            <p><strong>Filter Placement:</strong> Filters are placed at the top, making them immediately visible and accessible. This follows the common pattern of "controls at the top, content below."</p>
+            <p><strong>Info Panel:</strong> The movie information panel appears at the bottom, providing details when users click on data points. This keeps the main visualization area uncluttered while providing detailed information on demand.</p>
+
+            <h3>2.4 Interactivity Design</h3>
+            <p><strong>Tooltips:</strong> Hover tooltips provide quick access to detailed information without cluttering the visualization. They appear near the cursor and disappear when the user moves away.</p>
+            <p><strong>Click Interactions:</strong> Clicking on data points (especially in the scatter plot and top movies chart) shows detailed information in the info panel. This provides a way to "drill down" into specific movies.</p>
+            <p><strong>Filters:</strong> Interactive filters allow users to explore subsets of data. All charts update simultaneously, maintaining consistency and allowing users to see how different filters affect all visualizations at once.</p>
+
+            <h3>2.5 Typography and Labels</h3>
+            <p><strong>Axis Labels:</strong> All charts include clear axis labels with units (e.g., "Box Office (Millions $)"). This is crucial for understanding what the data represents.</p>
+            <p><strong>Chart Titles:</strong> Each chart has a descriptive title that clearly states what it shows.</p>
+            <p><strong>Font Sizes:</strong> I used readable font sizes (12-14px for axes, larger for titles) to ensure accessibility.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Discoveries and Findings</h2>
+            
+            <p>Using the visualization, I discovered several interesting facts about the movie dataset:</p>
+
+            <h3>3.1 Genre Analysis</h3>
+            <img src="Genre.png" alt="Bar Chart showing Box Office by Genre" class="screenshot-image">
+            <p><strong>Finding:</strong> Action and Sci-Fi genres tend to have the highest total box office revenue in this dataset. This makes sense as these genres often have larger budgets and appeal to broad audiences. Animation also performs well, likely due to family-friendly appeal.</p>
+            <p><strong>Evidence:</strong> When viewing the bar chart, you can see that Action and Sci-Fi genres have the tallest bars, indicating higher total box office.</p>
+
+            <h3>3.2 Temporal Trends</h3>
+            <img src="Line.png" alt="Line Chart showing Movies Over Time" class="screenshot-image">
+            <p><strong>What This Chart Shows:</strong> The "Movies Over Time" line chart displays how many movies from the dataset were released in each year. The x-axis shows the years (ranging from the earliest movie in the dataset to the latest), and the y-axis shows the count of movies released in that year. The blue line connects all the data points, making it easy to see trends over time.</p>
+            <p><strong>Finding:</strong> The dataset shows movies spanning from the 1940s to 2010s, with varying numbers of movies per year. The line chart reveals periods with more or fewer movies in the dataset, which helps identify which years are well-represented in the data.</p>
+            <p><strong>Evidence:</strong> The line chart shows peaks and valleys in the number of movies per year. For example, you might see a spike in certain years (like 2014) where multiple movies from the dataset were released, or years with only one movie. This pattern may reflect the selection criteria of the dataset or actual trends in movie production during those periods.</p>
+            <p><strong>How to Read It:</strong> Each point on the line represents a year, and the height of that point shows how many movies from the dataset were released in that year. Hovering over any point will show you the exact year and count. A rising line indicates more movies in later years, while a flat or declining line suggests fewer movies in those periods.</p>
+
+            <h3>3.3 IMDB Score vs Box Office Relationship</h3>
+            <img src="Scatter.png" alt="Scatter Plot showing IMDB Score vs Box Office" class="screenshot-image">
+            <p><strong>Finding:</strong> There is a weak positive correlation between IMDB scores and box office performance. However, some movies with very high IMDB scores (above 9.0) don't necessarily have the highest box office, suggesting that critical acclaim doesn't always translate to commercial success.</p>
+            <p><strong>Evidence:</strong> In the scatter plot, you can see movies like "The Shawshank Redemption" (IMDB: 9.3) with relatively lower box office compared to blockbusters like "Avatar" (IMDB: 7.8) with much higher box office.</p>
+            <p><strong>Interesting Observation:</strong> Some of the highest-grossing movies have IMDB scores in the 7-8 range, showing that commercial success and critical acclaim don't always align.</p>
+
+            <h3>3.4 Top Performers</h3>
+            <img src="Top 10.png" alt="Top 10 Movies by Box Office Chart" class="screenshot-image">
+            <p><strong>Finding:</strong> "Avatar" ($2,787.9M) and "Titanic" ($2,201.6M) dominate the box office rankings, both directed by James Cameron. These movies significantly outperformed others in the dataset, with Avatar being the highest-grossing movie and Titanic ranking second.</p>
+            <p><strong>Evidence:</strong> The horizontal bar chart clearly shows these two movies with much longer bars than others, indicating their exceptional box office performance. Avatar's box office of nearly $2.8 billion is over $500 million more than the third-place movie (The Avengers at $1,518.8M), demonstrating its dominance.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Video Demonstration</h2>
+            
+            <p>Below is a 2-4 minute video demonstrating the interactive visualization with narration explaining its features and findings:</p>
+
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://youtu.be/TmmttSAMf9A" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Technical Implementation</h2>
+
+            <h3>5.1 Data Structure</h3>
+            <p>The dataset contains 60 movies with the following attributes:</p>
+            <ul>
+                <li><strong>Name:</strong> Movie title</li>
+                <li><strong>Year:</strong> Release year</li>
+                <li><strong>Genre:</strong> Movie genre (Action, Sci-Fi, Drama, etc.)</li>
+                <li><strong>Rating:</strong> MPAA rating (G, PG, PG-13, R)</li>
+                <li><strong>BoxOffice:</strong> Total box office revenue in millions</li>
+                <li><strong>Budget:</strong> Production budget in millions</li>
+                <li><strong>Director:</strong> Director name</li>
+                <li><strong>Country:</strong> Country of production</li>
+                <li><strong>Runtime:</strong> Movie length in minutes</li>
+                <li><strong>IMDB_Score:</strong> IMDB rating (0-10 scale)</li>
+            </ul>
+
+            <h3>5.2 Code Structure</h3>
+            <p>The project is organized into several files:</p>
+            <ul>
+                <li><strong>index.html:</strong> Main HTML structure</li>
+                <li><strong>css/style.css:</strong> Styling and layout</li>
+                <li><strong>js/dataLoader.js:</strong> Data loading and processing</li>
+                <li><strong>js/visualizations.js:</strong> D3 chart creation functions</li>
+                <li><strong>js/main.js:</strong> Application initialization and event handling</li>
+                <li><strong>data/movie_data.csv:</strong> Dataset file</li>
+            </ul>
+
+            <h3>5.3 Key D3 Concepts Used</h3>
+            <ul>
+                <li><strong>Selections:</strong> Using d3.select() and d3.selectAll() to manipulate DOM elements</li>
+                <li><strong>Scales:</strong> scaleBand(), scaleLinear() for mapping data to visual space</li>
+                <li><strong>Axes:</strong> axisBottom(), axisLeft() for creating chart axes</li>
+                <li><strong>Data Binding:</strong> Using .data(), .enter(), .append() pattern</li>
+                <li><strong>Transitions:</strong> For smooth animations on hover</li>
+                <li><strong>Data Aggregation:</strong> Using d3.rollup() to group and aggregate data</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Conclusion</h2>
+            
+            <p>This project provided valuable hands-on experience with D3.js and data visualization principles. Through iterative design and implementation, I created an interactive visualization that allows users to explore movie data from multiple perspectives.</p>
+            
+            <p><strong>Key Learnings:</strong></p>
+            <ul>
+                <li>Understanding when to use different chart types</li>
+                <li>Implementing interactivity to enhance exploration</li>
+                <li>Designing for clarity and usability</li>
+                <li>Iterative improvement based on testing and feedback</li>
+            </ul>
+
+            <p><strong>Future Improvements:</strong></p>
+            <ul>
+                <li>Add more advanced filtering options (e.g., by director, country)</li>
+                <li>Implement brushing and linking between charts</li>
+                <li>Add animation when filters change</li>
+                <li>Include more detailed statistics and insights</li>
+                <li>Make the visualization more responsive for mobile devices</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="link-button">Back to Visualization →</a>
+        </div>
+    </div>
+</body>
+</html>
+

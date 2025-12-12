@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Data - Interactive Visualization</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Movie Data Analysis</h1>
+            <p class="subtitle">Explore movie data including box office performance, ratings, genres, and more</p>
+            <p style="margin-top: 10px;">
+                <a href="documentation.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">View Documentation</a>
+            </p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="genre-filter">Genre:</label>
+                <select id="genre-filter">
+                    <option value="all">All Genres</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="rating-filter">Rating:</label>
+                <select id="rating-filter">
+                    <option value="all">All Ratings</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="year-range">Year Range:</label>
+                <input type="range" id="year-range" min="1940" max="2020" value="2020" step="1">
+                <span id="year-display">2020</span>
+            </div>
+            <button id="reset-btn" class="btn-reset">Reset Filters</button>
+        </div>
+
+        <div class="visualization-grid">
+            <div class="chart-container" id="box-office-by-genre">
+                <h2>Box Office by Genre</h2>
+                <svg id="genre-chart"></svg>
+            </div>
+            
+            <div class="chart-container" id="movies-over-time">
+                <h2>Movies Over Time</h2>
+                <svg id="timeline-chart"></svg>
+            </div>
+            
+            <div class="chart-container" id="scatter-plot">
+                <h2>IMDB Score vs Box Office</h2>
+                <svg id="scatter-chart"></svg>
+            </div>
+            
+            <div class="chart-container" id="top-movies">
+                <h2>Top 10 Movies by Box Office</h2>
+                <svg id="top-movies-chart"></svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/movieData.js?v=2"></script>
+    <script src="js/dataLoader.js?v=2"></script>
+    <script src="js/visualizations.js?v=2"></script>
+    <script src="js/main.js?v=2"></script>
+</body>
+</html>
+

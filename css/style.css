@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2563eb;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+    font-style: italic;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: #555;
+}
+
+select, input[type="range"] {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+select:hover, input[type="range"]:hover {
+    border-color: #2563eb;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+#year-display {
+    font-weight: 600;
+    color: #2563eb;
+    min-width: 50px;
+}
+
+.btn-reset {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-reset:hover {
+    background: #1e40af;
+}
+
+.visualization-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container h2 {
+    font-size: 1.3em;
+    color: #2563eb;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.chart-container svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.bar {
+    fill: #2563eb;
+    transition: fill 0.3s;
+    cursor: pointer;
+}
+
+.bar:hover {
+    fill: #1e40af;
+}
+
+.line {
+    fill: none;
+    stroke: #2563eb;
+    stroke-width: 3;
+    transition: stroke-width 0.3s;
+}
+
+.line:hover {
+    stroke-width: 4;
+}
+
+.dot {
+    fill: #2563eb;
+    stroke: white;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: r 0.3s, fill 0.3s;
+}
+
+.dot:hover {
+    fill: #1e40af;
+    r: 8;
+}
+
+.axis {
+    font-size: 12px;
+}
+
+.axis-label {
+    font-size: 14px;
+    font-weight: 600;
+    fill: #555;
+}
+
+.grid-line {
+    stroke: #ddd;
+    stroke-width: 1;
+    stroke-dasharray: 3,3;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.legend {
+    font-size: 12px;
+}
+
+.legend-item {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.legend-item.inactive {
+    opacity: 0.3;
+}
+
+.info-panel {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 100px;
+}
+
+.info-panel h3 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+#game-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    border-left: 4px solid #2563eb;
+}
+
+.info-item strong {
+    display: block;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.info-item span {
+    color: #666;
+    font-size: 0.95em;
+}
+
+@media (max-width: 768px) {
+    .visualization-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
